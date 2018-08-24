@@ -14,7 +14,8 @@ use Mix.Config
 config :geop, Geop.Endpoint,
   http: [port: {:system, "PORT"}],
   url: [host: "example.com", port: 80],
-  cache_static_manifest: "priv/static/manifest.json"
+  cache_static_manifest: "priv/static/manifest.json",
+  config :geop, :db, name: "my_mongo_prod"
 
 # Do not print debug messages in production
 config :logger, level: :info

@@ -19,7 +19,8 @@ defmodule Geop.Mixfile do
   def application do
     [mod: {Geop, []},
      applications: [:phoenix, :phoenix_pubsub, :phoenix_html, :cowboy, :logger, :gettext,
-                    :phoenix_ecto, :postgrex]]
+                    :phoenix_ecto, :mongodb, :poolboy, :logger_file_backend,
+               :uuid, :httpoison]]
   end
 
   # Specifies which paths to compile per environment.
@@ -33,11 +34,16 @@ defmodule Geop.Mixfile do
     [{:phoenix, "~> 1.2.5"},
      {:phoenix_pubsub, "~> 1.0"},
      {:phoenix_ecto, "~> 3.0"},
-     {:postgrex, ">= 0.0.0"},
      {:phoenix_html, "~> 2.6"},
      {:phoenix_live_reload, "~> 1.0", only: :dev},
      {:gettext, "~> 0.11"},
-     {:cowboy, "~> 1.0"}]
+     {:mongodb, ">= 0.0.0"},
+     {:poolboy, ">= 0.0.0"},
+     {:cowboy, "~> 1.0"},
+     {:httpoison, "~> 0.9.0"},
+     {:uuid, "~> 1.1" },
+     {:logger_file_backend, "0.0.8"},
+     {:exrm, "~> 1.0.8" }]
   end
 
   # Aliases are shortcuts or tasks specific to the current project.

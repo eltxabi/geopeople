@@ -9,6 +9,7 @@ config :geop, Geop.Endpoint,
 # Print only warnings and errors during test
 config :logger, level: :warn
 
+config :geop, :db, name: "my_mongo_test"
 # Configure your database
 config :geop, Geop.Repo,
   adapter: Ecto.Adapters.Postgres,
